@@ -16,7 +16,7 @@ Inspired from UI on [Dribble](https://dribbble.com/shots/16708958/)
 
 ## Screenshots
 
-![screenshot](https://github.com/phuchuynhStrong/androider_sneaker/raw/main/screenshot-1.png "Screenshots")
+![screenshot](https://github.com/phuchuynhStrong/sneaker_store_flutter/blob/main/screenshot-1.png "Screenshots")
 
 
 ## Getting Started 🚀
