@@ -1,0 +1,42 @@
+name: androidker_sneaker
+description: A Very Good Project created by Very Good CLI.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+  flutter: 3.3.1
+
+dependencies:
+  animated_text_kit: ^4.2.2
+  badges: ^2.0.3
+  bloc: ^8.1.0
+  dartz: ^0.10.1
+  flex_color_scheme: ^6.0.1
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.1
+  flutter_localizations:
+    sdk: flutter
+  font_awesome_flutter: ^10.2.1
+  go_router: ^5.0.5
+  http: ^0.13.5
+  intl: ^0.17.0
+  lottie: ^1.4.3
+  model:
+    path: ./model
+
+dev_dependencies:
+  bloc_test: ^9.1.0
+  build_runner: ^2.2.1
+  flutter_gen_runner: ^5.0.1
+  flutter_test:
+    sdk: flutter
+  mocktail: ^0.3.0
+  very_good_analysis: ^3.0.2
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/lottie/
