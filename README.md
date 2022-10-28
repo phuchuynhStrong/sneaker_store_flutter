@@ -10,6 +10,15 @@ A Very Good Project created by Very Good CLI.
 
 ---
 
+## Idea
+
+Inspired from UI on [Dribble](https://dribbble.com/shots/16708958/)
+
+## Screenshots
+
+![screenshot](https://github.com/phuchuynhStrong/androider_sneaker/raw/main/screenshot-1.png "Screenshots")
+
+
 ## Getting Started 🚀
 
 This project contains 3 flavors:
