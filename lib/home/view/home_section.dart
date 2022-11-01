@@ -2,6 +2,7 @@ import 'package:androidker_sneaker/home/cubit/home_section_cubit.dart';
 import 'package:androidker_sneaker/infras/infras.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:model/model.dart';
 
@@ -171,7 +172,9 @@ class HomeSectionView extends StatelessWidget {
                                 ),
                               ),
                               IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  context.push('/product/${product.id}');
+                                },
                                 style: const ButtonStyle(
                                   backgroundColor: MaterialStatePropertyAll(
                                     Colors.black,

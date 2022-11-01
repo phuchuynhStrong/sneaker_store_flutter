@@ -43,40 +43,6 @@ class HomeView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  children: [
-                    const Text(
-                      'Search Products',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Expanded(child: Container()),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Badge(
-                        child: const Icon(
-                          FontAwesomeIcons.bagShopping,
-                        ),
-                      ),
-                    ),
-                    PopupMenuButton<String>(
-                      icon: const Icon(FontAwesomeIcons.ellipsisVertical),
-                      itemBuilder: (context) => [
-                        const PopupMenuItem(
-                          value: 'settings',
-                          child: Text(
-                            'Settings',
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 16),
                 child: TextField(
