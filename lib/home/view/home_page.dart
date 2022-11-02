@@ -2,7 +2,6 @@ import 'package:androidker_sneaker/home/cubit/home_cutbit.dart';
 import 'package:androidker_sneaker/home/view/home_section.dart';
 import 'package:androidker_sneaker/home/view/new_release_section.dart';
 import 'package:androidker_sneaker/infras/infras.dart';
-import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -111,7 +110,6 @@ class HomeView extends StatelessWidget {
           alignment: Alignment.center,
           child: Column(
             children: [
-              TextButton(onPressed: () {}, child: Text("Button")),
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 16),
                 child: TextField(
