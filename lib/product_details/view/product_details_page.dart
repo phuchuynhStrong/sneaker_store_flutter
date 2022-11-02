@@ -3,7 +3,6 @@ import 'package:androidker_sneaker/product_details/cubit/product_details_cubit.d
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 
 class ProductDetailsPage extends StatelessWidget {
@@ -132,7 +131,9 @@ class ProductDetailsView extends StatelessWidget {
                             backgroundColor:
                                 const MaterialStatePropertyAll(Colors.black),
                           ),
-                          onPressed: () {},
+                          onPressed: () => context
+                              .read<ProductDetailsCubit>()
+                              .onBuyPressed(context),
                           child: const Text(
                             'BUY NOW',
                             style: TextStyle(
@@ -156,8 +157,13 @@ class ProductDetailsView extends StatelessWidget {
         body = Text(errorMsg ?? 'Error');
         break;
     }
-    return Center(
-      child: body,
+    return Scaffold(
+      body: Center(
+        child: AnimatedSwitcher(
+          duration: const Duration(milliseconds: 300),
+          child: body,
+        ),
+      ),
     );
   }
 }

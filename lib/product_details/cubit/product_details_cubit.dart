@@ -1,8 +1,12 @@
 import 'package:androidker_sneaker/infras/infras.dart';
-import 'package:bloc/bloc.dart';
+import 'package:androidker_sneaker/product_details/view/select_product_size_dialog.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:model/model.dart';
 
 enum CommonCubitStatus { initial, loading, loaded, error }
+
+const kAvailableSizes = [8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5];
 
 class ProductDetailsState {
   ProductDetailsState({
@@ -10,6 +14,7 @@ class ProductDetailsState {
     this.errorMsg,
     this.product,
     this.favorite = false,
+    this.selectedSize,
   });
 
   factory ProductDetailsState.initial() => ProductDetailsState(
@@ -20,6 +25,7 @@ class ProductDetailsState {
   final String? errorMsg;
   final Product? product;
   final bool favorite;
+  final num? selectedSize;
 }
 
 class ProductDetailsCubit extends Cubit<ProductDetailsState> {
@@ -28,6 +34,32 @@ class ProductDetailsCubit extends Cubit<ProductDetailsState> {
 
   final ProductDetailsRepository _productDetailsRepository;
 
+  void selectSize(num size) {
+    emit(
+      ProductDetailsState(
+        status: state.status,
+        errorMsg: state.errorMsg,
+        product: state.product,
+        favorite: state.favorite,
+        selectedSize: size,
+      ),
+    );
+  }
+
+  void onBuyPressed(BuildContext context) {
+    showModalBottomSheet<int>(
+      context: context,
+      useRootNavigator: true,
+      backgroundColor: Colors.black,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(36),
+        ),
+      ),
+      builder: (ctx) => SelectProductSizeDialog(cubit: this),
+    );
+  }
+
   void markFavorite() {
     emit(
       ProductDetailsState(
@@ -35,6 +67,7 @@ class ProductDetailsCubit extends Cubit<ProductDetailsState> {
         errorMsg: state.errorMsg,
         product: state.product,
         favorite: !state.favorite,
+        selectedSize: state.selectedSize,
       ),
     );
   }
