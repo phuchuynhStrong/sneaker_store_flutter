@@ -6,14 +6,14 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:androidker_sneaker/app/app.dart';
-import 'package:androidker_sneaker/counter/counter.dart';
+import 'package:androidker_sneaker/splash/splash.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('App', () {
     testWidgets('renders CounterPage', (tester) async {
       await tester.pumpWidget(App());
-      expect(find.byType(CounterPage), findsOneWidget);
+      expect(find.byType(SplashPage), findsOneWidget);
     });
   });
 }
